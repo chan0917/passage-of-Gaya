@@ -10,6 +10,7 @@ public class TPnTIME : MonoBehaviour
     public bool AA = false;
     public GameObject pos;
     public LightMaster lMaster;
+    public P_UIController p_UIController;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,7 @@ public class TPnTIME : MonoBehaviour
         {
             collision.transform.position = pos.transform.position; // ºÎµúÈù °´Ã¼¸¦ Å¸°ÙÀÇ À§Ä¡·Î º¸³½´Ù.
             AA = true;
-            lMaster.llight.intensity = 0;
-            lMaster.Llight.intensity = 0;
-            lMaster.IsOn = false;
+            StartCoroutine(p_UIController.BBB());
         }
 
     }

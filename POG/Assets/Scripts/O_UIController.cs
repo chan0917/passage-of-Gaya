@@ -17,6 +17,9 @@ public class O_UIController : MonoBehaviour //골동품
     public bool O_Dark;
 
     public bool O_Second;
+
+    public AudioSource Rain;
+    public AudioSource BGM;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,8 @@ public class O_UIController : MonoBehaviour //골동품
     {   //이건 닫는 코드
         if (Input.GetKeyDown(KeyCode.Escape) && IsOpen == true)
         {
-
+            Rain.Play();
+            BGM.Stop();
             All.SetActive(false);
             IsOpen = false;
         }
@@ -50,7 +54,7 @@ public class O_UIController : MonoBehaviour //골동품
 
                 if (puicon.obj.name == "B_Collider")
                 {
-                    
+                   
                     StartCoroutine(B());
                 }
 
@@ -59,18 +63,19 @@ public class O_UIController : MonoBehaviour //골동품
                     StartCoroutine(C());
                 }
 
-                if (puicon.obj.name == "D_Collider")
+                if (puicon.obj.name == "E_Collider")
                 {
-                    StartCoroutine(D());
+                    StartCoroutine(E());
                 }
 
-                if (puicon.obj.name == "E_Collider")
+                if (puicon.obj.name == "G _Collider")
                 {
                     dis.text = "";
                     main.text = "AA";
                     back.SetActive(true);
                 }
-                else if (puicon.obj.name == "F_Collider")
+                
+                if (puicon.obj.name == "F_Collider")
                 {
                     dis.text = "";
                     main.text = "AA";
@@ -127,15 +132,15 @@ public class O_UIController : MonoBehaviour //골동품
         yield return null;
     }
 
-    public IEnumerator D()
+    public IEnumerator E()
     {
         IsRearn = true;
         yield return new WaitForSeconds(2f);
 
         All.SetActive(true);    //백그라운드 활성화 
         IsOpen = true;  //읽는중
-        dis.text = "주실인 11호분의 피장자 우측에서 출토된 금동관으로, 5～6세기 신라의 출자형 금관과는 달리 대륜에 나뭇가지 모양의 수목형 입식이 연결된 古拙한 관이다. 5～6세기 신라관의 계보 및 가야의 관을 이해하는 데 중요한 자료로 고고학적 가치가 크다.";
-        main.text = "부산 복천동 출토 금동관";
+        dis.text = "1980～1981년까지 부산대학교 박물관에서 발굴한 수혈식 석실분으로서, 5세기 경 부산에 있었던 가야 세력의 수장급 인물의 무덤이다.";
+        main.text = "11호분 출토 도기 거북장식 원통형 기대 및 단경호";
         back.SetActive(true);
         IsRearn = false;
        // O_Dark = true; //사용자가 두번째부터 조사하면 망함 

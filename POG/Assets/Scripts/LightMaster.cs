@@ -16,6 +16,9 @@ public class LightMaster : MonoBehaviour //카메라
     public O_UIController o_UIController;
     public P_AnimeController p_AnimeController;
     public AudioSource hand;
+    public AudioSource bgm;
+    public AudioSource low;
+
     Vector3 pos = Vector3.zero;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,11 @@ public class LightMaster : MonoBehaviour //카메라
 
         }
         else
+        {
             D_light.intensity = 0;
+            
+        }
+            
 
 
 

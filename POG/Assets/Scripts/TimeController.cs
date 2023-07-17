@@ -19,6 +19,9 @@ public class TimeController : MonoBehaviour //타임 마스터
     public LightMaster LMaster;
 
     public AudioSource Light;
+    public AudioSource Thunder;
+    public AudioSource BGM;
+    public AudioSource Rain;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +69,9 @@ public class TimeController : MonoBehaviour //타임 마스터
 
     public IEnumerator GODark()
     {
+        Thunder.Play();
+        
+        
         L_1.intensity = 0;
         L_2.intensity = 0;
         L_3.intensity = 0;

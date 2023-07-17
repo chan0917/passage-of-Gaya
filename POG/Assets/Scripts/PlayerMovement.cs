@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit slopeHit;
 
     public O_UIController o_UIController;
+    public P_UIController pul;
 
     private bool OnSlope()
     {
@@ -84,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
-        if (o_UIController.IsRearn || o_UIController.IsOpen)
+        if (o_UIController.IsRearn || o_UIController.IsOpen || pul.IsDie)
         {
             walkSpeed = 0;
         }
